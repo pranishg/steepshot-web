@@ -6,6 +6,7 @@ import Login from './components/Account/Login';
 import NotFound from './components/NotFound';
 import Localization from './components/Localization/index';
 import Signin from './components/Account/Login';
+import Registration from './components/Registration/Registration';
 import UserProfile from './components/UserProfile/index';
 import PrivateRoute from './components/Routes/PrivateRoute';
 import Feed from './components/Feed/Feed';
@@ -33,7 +34,7 @@ export default function getRoutes(store) {
   let isUserLogin = !!store.getState().auth.user && !!store.getState().auth.postingKey;
   
   function baseBrowseFilter() {
-    const baseBrowseFilter = localStorage.getItem('browse') == undefined ? 
+    const baseBrowseFilter = localStorage.getItem('browse') == undefined ?
     Constants.BROWSE_ROUTES[0].NAME : localStorage.getItem('browse');
     return baseBrowseFilter;
   }
@@ -52,6 +53,7 @@ export default function getRoutes(store) {
         <Redirect path="/browse" to={`/browse/${baseBrowseFilter()}`} />
         <Route path="/@:username" component={UserProfile} onLeave={clearMessages} />
         <Route path="/signin" component={Signin} onLeave={clearMessages} />
+        <Route path="/registration" component={Registration} onLeave={clearMessages} />
         <Route path="/post" component={SinglePostModalWrapper} onLeave={clearMessages} />
         <Route path="/search/:searchValue" component={SearchWrapper} onLeave={clearMessages} />
         <Route path="/guide" component={AboutComponent} onLeave={clearMessages} />
