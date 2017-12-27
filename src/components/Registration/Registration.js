@@ -15,7 +15,7 @@ class Registration extends React.Component {
   }
   
   handleChange(event) {
-    console.log(event.target.name);
+    console.log(event);
   }
   
   handleRegistration() {
@@ -43,12 +43,32 @@ class Registration extends React.Component {
                 :
                 null
             }
-            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-              <div class="input-group-addon">@</div>
-              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username" />
-            </div>
-            <label class="sr-only" for="inlineFormInputGroup">Username</label>
-            <div className="form-group">
+            <div className={containerClass + ' ???'}>
+              <form className="form-login form-horizontal">
+                <div className={this.state.userNameError ? "has-error" : null}>
+                  <div className="form-group">
+                    <div className="input-container col-xs-12">
+                      <input type="text"
+                             name="userName"
+                             id="formNAME"
+                             className="form-control autofil--gray"
+                             value={this.state.userName}
+                             onChange={this.handleChange.bind(this)}
+                      />
+                      <label htmlFor="formNAME" className="name">Name</label>
+                      <div className="help-block">
+                        {
+                          this.state.userNameError
+                            ?
+                            <div className="help-block__notice">Username is required</div>
+                            :
+                            null
+                        }
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="form-group">
                   <div className="buttons-container col-xs-12">
                     <button onClick={this.handleRegistration.bind(this)} type="submit" className="btn btn-default">Registration</button>
                   </div>
