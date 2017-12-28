@@ -19,6 +19,7 @@ import AboutComponent from './components/About/AboutComponent';
 import BrowseWrapper from './components/Wrappers/BrowseWrapper';
 
 import Constants from './common/constants';
+import RegistrationStatus from './components/Registration/RegistrationStatus';
 
 export default function getRoutes(store) {
   const clearMessages = () => {
@@ -53,6 +54,7 @@ export default function getRoutes(store) {
         <Redirect path="/browse" to={`/browse/${baseBrowseFilter()}`} />
         <Route path="/@:username" component={UserProfile} onLeave={clearMessages} />
         <Route path="/signin" component={Signin} onLeave={clearMessages} />
+        <Route path="/registration/:id" component={RegistrationStatus} onLeave={clearMessages} />
         <Route path="/registration" component={Registration} onLeave={clearMessages} />
         <Route path="/post" component={SinglePostModalWrapper} onLeave={clearMessages} />
         <Route path="/search/:searchValue" component={SearchWrapper} onLeave={clearMessages} />

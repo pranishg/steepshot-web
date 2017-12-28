@@ -16,11 +16,10 @@ import {
   vkLogin,
   githubLogin
 } from '../../actions/oauth';
-import Messages from '../Messages';
 import LoadingSpinner from '../LoadingSpinner';
-import steemconnect from 'steemconnect';
 import Constants from '../../common/constants';
 import { documentTitle } from '../DocumentTitle';
+import ErrorInfo from '../ErrorInfo';
 
 class Login extends React.Component {
   constructor(props) {
@@ -160,15 +159,7 @@ class Login extends React.Component {
                         onChange={this.handleChange.bind(this)}
                       />
                       <label htmlFor="formNAME" className="name">Name</label>
-                      <div className="help-block">
-                        {
-                          this.state.userNameError
-                          ?
-                            <div className="help-block__notice">Username is required</div>
-                          :
-                            null
-                        }
-                      </div>
+                      <ErrorInfo show={this.state.userNameError}>Username is required</ErrorInfo>
                     </div>
                   </div>
                 </div>
@@ -185,15 +176,7 @@ class Login extends React.Component {
                         autoComplete="new-password"
                       />
                       <label htmlFor="formPOSTKEY" className="name">Posting Key</label>
-                      <div className="help-block">
-                        {
-                          this.state.postingKeyError
-                          ?
-                            <div className="help-block__notice">Posting key is required</div>
-                          :
-                            null
-                        }
-                      </div>
+                      <ErrorInfo show={this.state.postingKeyError}>Posting key is required</ErrorInfo>
                     </div>
                   </div>
                 </div>

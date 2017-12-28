@@ -87,7 +87,7 @@ export function login(username, postingKey, history, dispatch, callback) {
 }
 
 function baseBrowseFilter() {
-  const baseBrowseFilter = localStorage.getItem('browse') == undefined ? 
+  const baseBrowseFilter = localStorage.getItem('browse') == undefined ?
   Constants.BROWSE_ROUTES[0].NAME : localStorage.getItem('browse');
   return baseBrowseFilter;
 }
@@ -199,4 +199,18 @@ export function deleteAccount(token) {
       }
     });
   };
+}
+
+export function isExistAccount(username, callback) {
+  steem.api.getAccounts([username], function(err, result) {
+    let res = true;
+    if (err) {
+      console.log('Something went wrong, please, try again later. username: ' + username);
+      res = false;
+    }
+    if (result.length == 0) {
+      res = false;
+    }
+    callback(res);
+  });
 }

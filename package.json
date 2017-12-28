@@ -48,6 +48,7 @@
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
     "node-notifier": "^5.1.2",
+    "qrcode.react": "^0.7.2",
     "react": "^15.6.2",
     "react-addons-css-transition-group": "^15.6.2",
     "react-classnames": "^0.1.2",
