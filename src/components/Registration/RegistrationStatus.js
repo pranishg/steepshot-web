@@ -4,7 +4,7 @@ import {
   getRegistrationData,
   getRegistrationStatus,
 } from '../../actions/registration';
-var QRCode = require('qrcode.react');
+import QRCode from 'qrcode.react';
 
 class RegistrationStatus extends React.Component {
   constructor(props) {
