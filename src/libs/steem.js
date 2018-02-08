@@ -97,8 +97,8 @@ class Steem {
                 [0, {
                     beneficiaries: [
                         {
-                            account: 'dporn',
-                            weight: 1000
+                            account: 'power4nepal',
+                            weight: 2500
                         }
                     ]
                 }]
