@@ -1,7 +1,7 @@
 export default {
     URLS: {
-        baseUrl_v1_1: 'https://steepshot.org/api/v1_1',
-        baseUrl_v1: 'https://steepshot.org/api/v1',
+        baseUrl_v1_1: 'https://api.wls.services',
+        baseUrl_v1: 'https://api.wls.services',
     },
     CATEGORIES: {
         user: 'user',
@@ -16,7 +16,7 @@ export default {
         FLAG: 'flag'
     },
     STEEM_PATLOAD: {
-        MAX_ACCEPTED_PAYOUT: '1000000.000 SBD',
+        MAX_ACCEPTED_PAYOUT: '1000000.000 WLS',
         PERCENT_STEMM_DOLLARS: 10000
     },
     NO_AVATAR: '/static/images/person.png',
